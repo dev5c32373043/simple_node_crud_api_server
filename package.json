@@ -2,11 +2,14 @@
   "name": "simple_crud_api",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "dev": "nodemon server.js",
+    "debug": "nodemon --inspect server.js",
+    "test": "NODE_ENV=test mocha --timeout=10000 --require ./test --colors --exit ./test/**/*.spec.js",
+    "prod": "node server.js"
   },
-  "author": "",
+  "author": "pickyDude",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -19,6 +22,14 @@
     "passport-jwt": "^3.0.0"
   },
   "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-http": "^3.0.0",
+    "eslint": "^4.18.2",
+    "eslint-plugin-node": "^6.0.1",
+    "mocha": "^5.0.4",
     "nodemon": "^1.12.1"
+  },
+  "engines": {
+    "node": ">=8.9.1"
   }
 }
